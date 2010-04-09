@@ -18,36 +18,14 @@ class action_plugin_jquery extends DokuWiki_Action_Plugin {
      */
     function register(&$controller) {
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, '_addjquery');
-        // $controller->register_hook('JQUERY_READY', 'BEFORE', $this, '_test');
-    }
-
-    function _test(&$event, $param) {
-        $event->data[] = 'alert(\'Test successful!\');';
     }
 
     // output jQuery.noConflict(); so that it doesn't break current $() functionality
     function _addjquery(&$event, $param) {
-        // script.js is automagically used by js.php
-        $morecode = array();
-        $addjs = '';
-        trigger_event('JQUERY_READY', $morecode, NULL, false);
-        foreach ($morecode as $id=>$mc) {
-            $addjs .= '// BEGIN --- ' . $id . PHP_EOL;
-            $addjs .= $mc . PHP_EOL;
-            $addjs .= '// END --- ' . $id . PHP_EOL;
-        }
-
-        $fulljs = 'jQuery.noConflict();' . PHP_EOL;
-        if (!empty($addjs)) {
-            $fulljs .= 'jQuery(document).ready(function() {' . PHP_EOL;
-            $fulljs .= $addjs . PHP_EOL;
-            $fulljs .= '});' . PHP_EOL;
-        }
         $event->data['script'][] = array(
             'type' => 'text/javascript',
             'charset' => 'utf-8',
-            '_data' => $fulljs,
+            '_data' => 'jQuery.noConflict();' . PHP_EOL,
         );
     }
-
 }

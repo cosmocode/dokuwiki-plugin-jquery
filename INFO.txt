@@ -1,8 +1,0 @@
-# General Plugin Info do not edit
-
-author Markus Birth
-email  markus@birth-online.de
-date   2009-02-10
-name   jQuery v1.3.1 Plugin
-desc   Provides the jQuery JavaScript Framework for other plugins.
-url    http://www.dokuwiki.org/plugin:jquery

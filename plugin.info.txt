@@ -1,0 +1,7 @@
+base   jquery
+author Adrian Lang, Markus Birth
+email  lang@cosmocode.de
+date   2010-04-09
+name   jQuery v1.4.2 Plugin
+desc   Provides the jQuery JavaScript Framework for other plugins.
+url    http://www.dokuwiki.org/plugin:jquery

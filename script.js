@@ -1,1 +1,1 @@
-/* DOKUWIKI:include jquery-1.4.2.min.js */
+/* DOKUWIKI:include jquery-1.4.4.min.js */
